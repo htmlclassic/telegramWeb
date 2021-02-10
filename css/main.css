@@ -60,6 +60,10 @@ ul {
     outline: none; }
 
 .chat-block {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   overflow-y: auto;
   position: fixed;
   top: 54px;
@@ -158,6 +162,21 @@ ul {
   .chat-block .last-message {
     margin: 0;
     margin-top: 8px; }
+  .chat-block .message-status {
+    margin-right: 4px;
+    display: inline-block;
+    width: 17px;
+    height: 17px; }
+  .chat-block .sent-received, .chat-block .sent-received-alt, .chat-block .sent, .chat-block .sent-alt {
+    background-size: 17px; }
+  .chat-block .sent-received {
+    background: url("../icons/sent-and-received.svg") no-repeat center 8px; }
+  .chat-block .sent-received-alt {
+    background: url("../icons/sent-and-received-alt.svg") no-repeat center 8px; }
+  .chat-block .sent {
+    background: url("../icons/sent.svg") no-repeat center 8px; }
+  .chat-block .sent-alt {
+    background: url("../icons/sent-alt.svg") no-repeat center 8px; }
 
 .dialog {
   position: fixed;
@@ -165,24 +184,3 @@ ul {
   width: 80%;
   height: 100%;
   border: 3px solid red; }
-
-.message-status {
-  margin-right: 4px;
-  display: inline-block;
-  width: 17px;
-  height: 17px; }
-
-.sent-received, .sent-received-alt, .sent, .sent-alt {
-  background-size: 17px; }
-
-.sent-received {
-  background: url("../icons/sent-and-received.svg") no-repeat center 8px; }
-
-.sent-received-alt {
-  background: url("../icons/sent-and-received-alt.svg") no-repeat center 8px; }
-
-.sent {
-  background: url("../icons/sent.svg") no-repeat center 8px; }
-
-.sent-alt {
-  background: url("../icons/sent-alt.svg") no-repeat center 8px; }
