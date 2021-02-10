@@ -63,6 +63,8 @@ ul
     outline: none
 
 .chat-block
+  user-select: none
+
   overflow-y: auto
   position: fixed
   top: 54px
@@ -152,6 +154,27 @@ ul
   .last-message
     margin: 0
     margin-top: 8px
+  
+  .message-status
+    margin-right: 4px
+    display: inline-block
+    width: 17px
+    height: 17px
+
+  .sent-received, .sent-received-alt, .sent, .sent-alt
+    background-size: 17px
+
+  .sent-received
+    background: url("../icons/sent-and-received.svg") no-repeat center 8px
+
+  .sent-received-alt
+    background: url("../icons/sent-and-received-alt.svg") no-repeat center 8px
+
+  .sent
+    background: url("../icons/sent.svg") no-repeat center 8px
+
+  .sent-alt
+    background: url("../icons/sent-alt.svg") no-repeat center 8px
 
 .dialog
   position: fixed
@@ -161,25 +184,3 @@ ul
   height: 100%
 
   border: 3px solid red
-  
-
-.message-status
-  margin-right: 4px
-  display: inline-block
-  width: 17px
-  height: 17px
-
-.sent-received, .sent-received-alt, .sent, .sent-alt
-  background-size: 17px
-
-.sent-received
-  background: url("../icons/sent-and-received.svg") no-repeat center 8px
-
-.sent-received-alt
-  background: url("../icons/sent-and-received-alt.svg") no-repeat center 8px
-
-.sent
-  background: url("../icons/sent.svg") no-repeat center 8px
-
-.sent-alt
-  background: url("../icons/sent-alt.svg") no-repeat center 8px
