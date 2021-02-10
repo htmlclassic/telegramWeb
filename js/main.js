@@ -1,49 +1,50 @@
 window.onload = function() {
-    let list = document.querySelectorAll('.chats');
-    let listItems = document.querySelectorAll('.chats li');
+    let chats = document.querySelectorAll('.chats li');
 
-    for (let item of listItems) {
-        item.onclick = function() {
-            // ТУТ ТУПО ВСЕ ОДИНАКОВО, НАД ЗАПАКОВАТЬ КАКТО В ФУНКЦИЮ
-            const sentClass = "sent";
-            const sentReceivedClass = "sent-received";
+    for (let chat of chats) {
+        chat.onclick = function() {
+            let messageStatus = chat.querySelector('.message-status');
+            let pinnedChat = chat.querySelector(".pinned-chat");
 
-            clearPreviousSelected(sentClass, sentReceivedClass);
+            clearPreviousSelected();
 
-            item.classList.toggle("selected");
-
-            let pinnedChat = item.querySelector(".pinned-chat");
-            let messageStatus = item.querySelector('.message-status');
-
-            let classListMessageStatus = messageStatus.classList.toString();
-            let classListPinnedChat = pinnedChat.classList.toString();
-
-            if (classListMessageStatus.indexOf(sentReceivedClass) != -1) {
-                messageStatus.classList.remove(sentReceivedClass);
-                messageStatus.classList.add(sentReceivedClass + "-alt");
-            } else if (classListMessageStatus.indexOf(sentClass) != -1) {
-                messageStatus.classList.remove(sentClass);
-                messageStatus.classList.add(sentClass + "-alt");
-            }
-
-            if (classListPinnedChat.indexOf("pinned-icon") != -1) {
-                pinnedChat.classList.remove("pinned-icon");
-                pinnedChat.classList.add("pinned-icon-alt");
-            }
-               
+            chat.classList.toggle("selected");
+            
+            switchMessageStatus(messageStatus);
+            switchPinIcon(pinnedChat);
         };
     }
 
-    function clearPreviousSelected(sentClass, sentReceivedClass) {
+    function clearPreviousSelected() {
         let selectedChat = document.querySelector(".chats .selected");
 
-        let messageStatus = selectedChat.querySelector(".message-status");
-        let pinnedChat = selectedChat.querySelector(".pinned-chat");
-        
-        let classListMessageStatus = messageStatus.classList.toString();
+        if (selectedChat !== null) {
+            let messageStatus = selectedChat.querySelector('.message-status');
+            let pinnedChat = selectedChat.querySelector(".pinned-chat");
+            
+            selectedChat.classList.remove("selected");
+
+            switchMessageStatus(messageStatus)
+            switchPinIcon(pinnedChat)
+        }
+    }
+
+    function switchPinIcon(pinnedChat) {
         let classListPinnedChat = pinnedChat.classList.toString();
-        
-        selectedChat.classList.remove("selected");
+
+        if (classListPinnedChat.indexOf("pinned-icon-alt") != -1) {
+            pinnedChat.classList.remove("pinned-icon-alt");
+            pinnedChat.classList.add("pinned-icon");
+        } else if (classListPinnedChat.indexOf("pinned-icon") != -1) {
+            pinnedChat.classList.remove("pinned-icon");
+            pinnedChat.classList.add("pinned-icon-alt");
+        }
+    }
+
+    function switchMessageStatus(messageStatus) {
+        let classListMessageStatus = messageStatus.classList.toString();
+        const sentClass = "sent";
+        const sentReceivedClass = "sent-received";
 
         if (classListMessageStatus.indexOf(sentReceivedClass + "-alt") != -1) {
             messageStatus.classList.remove(sentReceivedClass + "-alt");
@@ -51,11 +52,14 @@ window.onload = function() {
         } else if (classListMessageStatus.indexOf(sentClass + "-alt") != -1) {
             messageStatus.classList.remove(sentClass + "-alt");
             messageStatus.classList.add(sentClass);
-        }
-
-        if (classListPinnedChat.indexOf("pinned-icon-alt") != -1) {
-            pinnedChat.classList.remove("pinned-icon-alt");
-            pinnedChat.classList.add("pinned-icon");
+        } else {
+            if (classListMessageStatus.indexOf(sentReceivedClass) != -1) {
+                messageStatus.classList.remove(sentReceivedClass);
+                messageStatus.classList.add(sentReceivedClass + "-alt");
+            } else if (classListMessageStatus.indexOf(sentClass) != -1) {
+                messageStatus.classList.remove(sentClass);
+                messageStatus.classList.add(sentClass + "-alt");
+            }
         }
     }
 };
