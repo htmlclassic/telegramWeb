@@ -12,7 +12,7 @@ function adjustTextOverflow() {
         let readAndTimeBlock = chatNameItem.parentNode.querySelector('.read-and-time')
         let readAndTimeBlockWidth = parseFloat(window.getComputedStyle(readAndTimeBlock).width);
 
-        chatNameItem.style.width = descWidth - (readAndTimeBlockWidth + 5) + "px";
+        chatNameItem.style.width = descWidth - (readAndTimeBlockWidth + 10) + "px";
     }
 
     for (let p of pCollection) {
