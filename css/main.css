@@ -15,6 +15,8 @@ ul {
 
 .page-main {
   width: 100%;
+  height: 100%;
+  position: fixed;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25,12 +27,10 @@ ul {
       -ms-flex-negative: 0;
           flex-shrink: 0;
   width: 20%;
-  min-width: 260px;
-  height: 100vh; }
+  min-width: 260px; }
 
 .right-col {
-  width: 100%;
-  height: 100vh; }
+  width: 100%; }
 
 .menu {
   position: fixed; }
@@ -101,6 +101,10 @@ ul {
     .chat-block li:hover {
       background-color: #f1f1f1; }
     .chat-block li .chat-name {
+      overflow: hidden;
+      -o-text-overflow: ellipsis;
+         text-overflow: ellipsis;
+      display: inline-block;
       font-weight: bold;
       color: #000; }
     .chat-block li.selected {

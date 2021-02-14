@@ -5,7 +5,15 @@ function adjustTextOverflow() {
     let pinnedChatRightMargin = parseFloat(window.getComputedStyle(pinnedChat).right);
     let descWidth = parseFloat(window.getComputedStyle(desc).width);
     let pCollection = document.querySelectorAll('.last-message');
+    let chatNameCollectiom = document.querySelectorAll('.chat-name');
     let calcP = descWidth - (pinnedChatWidth + pinnedChatRightMargin + 5);
+    
+    for (let chatNameItem of chatNameCollectiom) {
+        let readAndTimeBlock = chatNameItem.parentNode.querySelector('.read-and-time')
+        let readAndTimeBlockWidth = parseFloat(window.getComputedStyle(readAndTimeBlock).width);
+
+        chatNameItem.style.width = descWidth - (readAndTimeBlockWidth + 5) + "px";
+    }
 
     for (let p of pCollection) {
         if (p.parentNode.querySelector(".pinned-icon") !== null || p.parentNode.querySelector(".pinned-icon-alt") !== null) {
