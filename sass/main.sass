@@ -140,16 +140,15 @@ ul
     .pinned-chat
       right: 14px
       bottom: 0
-      width: 11px
-      height: 12px
+      width: 13px
+      height: 13px
     
-    .pinned-icon
-      background: url("../icons/pin-icon.svg") no-repeat center
-      background-size: 13px
+    .pinned-icon, .pinned-icon-alt
+      background: url("../icons/pin-icons.svg") no-repeat
+      background-size: 26px
 
     .pinned-icon-alt
-      background: url("../icons/pin-icon-alt.svg") no-repeat center
-      background-size: 13px
+      background-position: -14px
   
   .last-message
     overflow: hidden;
@@ -163,20 +162,19 @@ ul
     width: 17px
     height: 17px
 
-  .sent-received, .sent-received-alt, .sent, .sent-alt
-    background-size: 17px
-
-  .sent-received
-    background: url("../icons/sent-and-received.svg") no-repeat center 8px
+  .sent-received, .sent-received-alt
+    background: url("../icons/sent-received-icons.svg") no-repeat 0 8px
+    background-size: 42px
 
   .sent-received-alt
-    background: url("../icons/sent-and-received-alt.svg") no-repeat center 8px
+    background-position-x: -25px
 
-  .sent
-    background: url("../icons/sent.svg") no-repeat center 8px
+  .sent, .sent-alt
+    background: url("../icons/sent-icons.svg") no-repeat 2px 8px
+    background-size: 42px
 
   .sent-alt
-    background: url("../icons/sent-alt.svg") no-repeat center 8px
+    background-position-x: -23px
 
 .dialog
   background: url("../wp.jpg") no-repeat fixed

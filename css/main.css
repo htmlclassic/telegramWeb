@@ -151,14 +151,13 @@ ul {
     .chat-block .description .pinned-chat {
       right: 14px;
       bottom: 0;
-      width: 11px;
-      height: 12px; }
-    .chat-block .description .pinned-icon {
-      background: url("../icons/pin-icon.svg") no-repeat center;
-      background-size: 13px; }
+      width: 13px;
+      height: 13px; }
+    .chat-block .description .pinned-icon, .chat-block .description .pinned-icon-alt {
+      background: url("../icons/pin-icons.svg") no-repeat;
+      background-size: 26px; }
     .chat-block .description .pinned-icon-alt {
-      background: url("../icons/pin-icon-alt.svg") no-repeat center;
-      background-size: 13px; }
+      background-position: -14px; }
   .chat-block .last-message {
     overflow: hidden;
     -o-text-overflow: ellipsis;
@@ -170,16 +169,16 @@ ul {
     display: inline-block;
     width: 17px;
     height: 17px; }
-  .chat-block .sent-received, .chat-block .sent-received-alt, .chat-block .sent, .chat-block .sent-alt {
-    background-size: 17px; }
-  .chat-block .sent-received {
-    background: url("../icons/sent-and-received.svg") no-repeat center 8px; }
+  .chat-block .sent-received, .chat-block .sent-received-alt {
+    background: url("../icons/sent-received-icons.svg") no-repeat 0 8px;
+    background-size: 42px; }
   .chat-block .sent-received-alt {
-    background: url("../icons/sent-and-received-alt.svg") no-repeat center 8px; }
-  .chat-block .sent {
-    background: url("../icons/sent.svg") no-repeat center 8px; }
+    background-position-x: -25px; }
+  .chat-block .sent, .chat-block .sent-alt {
+    background: url("../icons/sent-icons.svg") no-repeat 2px 8px;
+    background-size: 42px; }
   .chat-block .sent-alt {
-    background: url("../icons/sent-alt.svg") no-repeat center 8px; }
+    background-position-x: -23px; }
 
 .dialog {
   background: url("../wp.jpg") no-repeat fixed;
