@@ -1,3 +1,43 @@
+let gutter = document.querySelector('.gutter');
+let leftCol = document.querySelector('.left-col');
+let rightCol = document.querySelector('.right-col');
+let isMouseDown = false;
+let screenX = 0;
+let diff = 0;
+
+gutter.onmousedown = function(e) {
+    isMouseDown = true;
+    screenX = e.screenX;
+    gutter.style.cursor = "e-resize"
+};
+
+document.onmouseup = function(e) {
+    isMouseDown = false;
+};
+
+document.onmousemove = function(e) {
+    if (isMouseDown && screenX != e.screenX) {
+        let leftColWidth = parseFloat(window.getComputedStyle(leftCol).width);
+        let rightColWidth = parseFloat(window.getComputedStyle(rightCol).width);
+
+        if (screenX < e.screenX) {
+            diff = e.screenX - screenX;
+            console.log(diff);
+
+            leftCol.style.width = leftColWidth + diff + "px"
+            rightCol.style.width = rightColWidth - diff + "px"
+        } else {
+            diff = screenX - e.screenX;
+
+            leftCol.style.width = leftColWidth - diff + "px"
+            rightCol.style.width = rightColWidth + diff + "px"
+        }
+
+        adjustTextOverflow();
+        screenX = e.screenX;
+    }
+};
+
 document.onclick = function() {
     hideCustomMenu();
 };

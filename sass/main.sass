@@ -19,13 +19,28 @@ ul
   position: fixed
   display: flex
 
+
+$rightColWidth: 380px
+
 .left-col
   flex-shrink: 0;
   width: 20%
   min-width: 260px
+  max-width: calc(100% - 380px)
+  position: relative
 
+  .gutter
+    width: 10px
+    height: 100%
+    position: absolute
+    right: -7px
+    top: 0
+  
+    &:hover
+      cursor: e-resize
 .right-col
   width: 100%
+  min-width: 380px
 
 .menu
   position: fixed
@@ -74,8 +89,6 @@ ul
 
 .chat-block
   user-select: none
-
-  overflow-y: auto
   top: 54px
 
   width: 100%
