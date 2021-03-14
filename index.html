@@ -97,12 +97,90 @@
         </div>
         <div class="right-col">
             <section class="dialog">
+                <header class="dialog-header">
+                    <div class="user-info">
+                        <span class="name">Дмитрий Пучков</span>
+                        <time class="last-seen">last seen 15 years ago</time>
+                    </div>
+                    <div class="options">
+                        <button class="search"></button>
+                        <button class="call"></button>
+                        <button class="show-sidebar"></button>
+                        <button class="more-options"></button>
+                    </div>
+                </header>
                 <ul class="messages">
-                    
+                    <article class="user-messages">
+                        <li>
+                            <div class="avatar">
+                                <img src="profilePics/goblin.jpg" alt="">
+                            </div>
+                            <div class="sender">
+                                Дмитрий Пучков
+                            </div>
+                            <p class="message">
+                                Календарь, ремни, ножи, в ОПЕР ШОПЕ закажи!
+                            </p>
+                            <section class="additional-info">
+                                <div class="read-and-time">
+                                    <span class="isEdited"></span>
+                                    <time>01:30</time>
+                                    <!-- <span class="message-status sent-received"></span> -->
+                                </div>
+                            </section>
+                        </li>
+                        <li>
+                            <div class="sender">
+                                <!-- Дмитрий Пучков -->
+                            </div>
+                            <p class="message">
+                                Малолетний дебил.
+                            </p>
+                            <section class="additional-info">
+                                <div class="read-and-time">
+                                    <span class="isEdited">edited</span>
+                                    <time>01:31</time>
+                                    <!-- <span class="message-status sent-received"></span> -->
+                                </div>
+                            </section>
+                        </li>  
+                    </article>
+                    <article class="user-messages">
+                        <li>
+                            <div class="avatar">
+                                <img src="profilePics/anon.png" alt="">
+                            </div>
+                            <div class="sender">
+                                Димас Князь
+                            </div>
+                            <p class="message">
+                                Дмитрий Юрьевич, не надо так!
+                            </p>
+                            <section class="additional-info">
+                                <div class="read-and-time">
+                                    <!-- <span class="isEdited">edited</span> -->
+                                    <time>01:32</time>
+                                    <span class="message-status sent-received"></span>
+                                </div>
+                            </section>
+                        </li>  
+                    </article>
                 </ul>
+                <div class="input-block">
+                    <button class="attach-button">
+                        <img src="icons/paperclip.svg" alt="">
+                    </button>
+                    <textarea name="input-message" rows="1" class="input-message" placeholder=" Write a message..."></textarea>
+                    <div class="wrapper">
+                        <section class="send-buttons"> 
+                            <button class="stickers"></button>
+                            <button class="voice-record"></button>
+                        </section>
+                    </div>   
+                </div>
             </section>
         </div>
-        <script src="js/main.js"></script>
+        <script type="module" src="js/main.js"></script>
     </main>
 </body>
 </html>
