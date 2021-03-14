@@ -15,6 +15,12 @@ let screenX = 0;
 let diff = 0;
 
 window.addEventListener('resize', function() {
+    let w = parseFloat(window.innerWidth) - parseFloat(window.getComputedStyle(leftCol).width);
+
+    dialogHeader.style.width = w + "px";
+    inputBlock.style.width = w + "px";
+    rightCol.style.width = w + "px";
+
     adjustTextOverflow();
 });
 
